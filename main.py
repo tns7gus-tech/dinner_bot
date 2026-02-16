@@ -197,7 +197,7 @@ def main():
     logger.info(f"🌐 웹 서버 실행 준비 (포트: {port})")
     
     # aiohttp의 run_app은 블로킹 함수이며 시그널 처리를 자동으로 수행함
-    web.run_app(app, port=port, loop=asyncio.new_event_loop())
+    web.run_app(app, host="0.0.0.0", port=port)
 
 
 if __name__ == "__main__":
