@@ -51,7 +51,8 @@ class DinnerBot:
             self.send_dinner_recommendation,
             CronTrigger(
                 hour=settings.meal_send_hour,
-                minute=settings.meal_send_minute
+                minute=settings.meal_send_minute,
+                timezone=pytz.timezone(settings.timezone)
             ),
             id="dinner_recommendation",
             name="Daily Dinner Recommendation",
